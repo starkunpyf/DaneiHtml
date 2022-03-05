@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    /*div默认高度为内容高度*/
+    body>div{
+      width: 200px;border: 1px solid red;
+      overflow: hidden;/*解决所有子元素浮动时导致的高度为0的异常*/
+    }
+    #d1{
+      width: 50px;height: 50px;background-color: red;
+      float: left;
+    }
+    #d2{
+      width: 50px;height: 50px;background-color: green;
+      float: left;
+    }
+    #d3{
+      width: 50px;height: 50px;background-color: blue;
+      float: left;
+    }
+    #d4{
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+    ul{
+        list-style-type: none;/*去掉图标*/
+        overflow: hidden;/*解决高度为0 时产生的显示异常*/
+    }
+    li{
+        float: left;
+        margin-right: 20px;
+    }
+  </style>
+</head>
+<body>
+<ul>
+    <li><a href="">刘备</a></li>
+    <li><a href="">赵云</a></li>
+    <li><a href="">刘禅</a></li>
+    <li><a href="">孙尚香</a></li>
+    <li><a href="">诸葛亮</a></li>
+</ul>
+<div>
+  <div id="d1"></div>
+  <div id="d2"></div>
+  <div id="d3"></div>
+</div>
+<div id="d4">abcd</div>
+
+</body>
+</html>

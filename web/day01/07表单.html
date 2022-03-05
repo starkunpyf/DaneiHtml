@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--action设置提交地址-->
+<form action="http://www.tmooc.cn">
+    <!--placeholder占位文本 value设置默认值 maxlength最大字符长度-->
+    用户名:<input type="text" name="username" maxlength="5" value="tom"
+               placeholder="请输入用户名" readonly><br>
+    密码:<input type="password" placeholder="请输入密码"><br>
+    <!--单选框中value必须写 不写则提交on checked设置默认选中-->
+    性别:<input type="radio" name="gender" value="m" id="r1">
+    <label for="r1">男</label>
+    <input type="radio" name="gender" checked value="w" id="r2">
+    <label for="r2">女</label><br>
+    兴趣爱好:<input type="checkbox" name="hobby" value="cy">抽烟
+    <input type="checkbox" name="hobby" checked value="hj">喝酒
+    <input type="checkbox" name="hobby" value="tt">烫头<br>
+    生日:<input type="date" name="birthday"><br>
+    靓照:<input type="file" name="pic"><br>
+    所在地:<select name="city">
+    <option value="bj">北京</option>
+    <option value="sh">上海</option>
+    <!--selected设置默认选中-->
+    <option value="gz" selected>广州</option>
+</select><br>
+    <!--提交按钮-->
+    <input type="submit" value="注册">
+    <!--重置按钮-->
+    <input type="reset">
+    <!--自定义按钮-->
+    <input type="button" value="自定义按钮">
+    <button type="submit">提交</button>
+    <button type="reset">重置</button>
+    <button type="button">自定义按钮</button>
+</form>
+
+</body>
+</html>

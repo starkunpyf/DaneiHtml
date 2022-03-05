@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    body{
+      font: 12px "simhei", Arial, Helvetica, sans-serif;
+      color: #666;
+    }
+    body>div{
+      width: 1000px;
+      margin: 0 auto;/*内容整体居中*/
+      background-color: #0aa1ed;
+    }
+    #t_div>div,#b_l_div,#b_r_div>div{
+      background-color: #e8e8e8;
+    }
+    #t_l_div{
+      width: 611px;height: 376px;
+      float: left;
+    }
+    #t_r_div{
+      width: 375px;height: 376px;
+      float: right;
+    }
+    #t_div{
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    #b_l_div{
+      width: 366px;
+      height: 233px;
+      float: left;
+    }
+    #b_r_div{
+      float: right;
+    }
+    #b_div{
+      overflow: hidden;
+    }
+    #b_r_div>div{
+      width: 198px;
+      height: 233px;
+      float: left;
+      margin-left: 10px;
+    }
+    /*左上相关样式*/
+    #t_l_div>div{
+      width: 245px;
+      height: 232px;
+      margin: 68px 0 0 36px;
+    }
+    .title_p{
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 12px;
+    }
+    .price_p{
+      font-size: 24px;
+      color: #0aa1ed;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    a{
+      display: block;
+      width: 132px;
+      height: 40px;
+      background-color: #0aa1ed;
+      text-align: center;
+      line-height: 40px;
+      text-decoration: none;
+      font-size: 20px;
+      color: white;
+      border-radius: 3px;
+    }
+    #t_l_div img{
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      width: 318px;
+      height: 319px;
+      transition-duration: 1.25s;/*设置动画持续时间1.25秒*/
+    }
+    img:hover{
+      transform: scale(1.1);/*缩放1.1倍*/
+    }
+    #t_l_div{
+      position: relative;/*参照物*/
+    }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div>
+  <div id="t_div">
+    <div id="t_l_div">
+      <div>
+        <p class="title_p">灵越 燃7000系列</p>
+        <p>酷睿双核i5处理器|256GB SSD| 8GB内存
+          英特尔HD显卡620含共享显卡内存</p>
+        <p class="price_p">￥4999.00</p>
+        <a href="">查看详情</a>
+      </div>
+      <img src="http://doc.canglaoshi.org/tstore_v1/images/itemCat/study_computer_img1.png" alt="">
+    </div>
+    <div id="t_r_div"></div>
+  </div>
+  <div id="b_div">
+    <div id="b_l_div"></div>
+    <div id="b_r_div">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

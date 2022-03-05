@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    span{background-color: yellow}
+    body>div{
+      background-color: red;
+      /*元素自身文本内容居中 和 内部的行内元素居中*/
+      text-align: center;
+    }
+    body>div>div{
+      background-color: green;
+      width: 200px;
+      margin: 50px 0;
+    }
+    body>div>a{
+      width: 100px;
+      background-color: blue;
+      display: block;/*块级元素的居中 只能通过margin:0 auto实现*/
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <a href="">查看详情</a>
+  <span>文本内容</span>
+  <div><a href="">超链接</a></div>
+  <div><p>这是p标签</p></div>
+</div>
+</body>
+</html>

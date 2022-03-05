@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    #d1{
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+      /*margin-left: 50px;
+      margin-top: 50px;
+      margin-bottom: 50px;*/   /*单独某一个方向赋值*/
+      /*margin: 50px;*/    /*四个方向赋值*/
+      /*margin: 50px 100px;*/    /*上下和左右赋值*/
+      margin: 10px 20px 30px 40px;    /*上右下左顺时针赋值*/
+    }
+    #d2{
+      width: 100px;
+      height: 100px;
+      border: 1px solid blue;
+      margin-top: 20px;
+    }
+  #s1{
+    border: 1px solid blue;
+    margin-right: 50px;
+    /*margin-top: 50px;*/ /*行内元素上下外边距无效*/
+  }
+  #s2{
+    /*左右相邻彼此添加外边距相加*/
+    margin-left: 30px;
+  }
+  #big{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+      overflow: hidden;/*解决粘连问题*/
+  }
+  #big>div{
+    width: 50px;
+    height: 50px;
+    background-color: green;
+      margin-left: 50px;
+      /*当元素的上边缘和上级元素的上边缘重叠时
+      给元素添加上外边距会出现粘连问题*/
+      margin-top: 50px;
+  }
+  body{
+      margin: 0;/*去掉自带外边距*/
+  }
+    h1{
+        margin: 0;
+    }
+    p{margin: 0}
+    ul{margin: 0}
+    *{margin: 0}
+  </style>
+</head>
+<body>
+<ul>
+    <li>aaa</li>
+    <li>bbb</li>
+</ul>
+<h1>这是h1</h1>
+<p>pppp</p>
+<div id="big">
+  <div></div>
+</div>
+<span id="s1">span1</span><span id="s2">span2</span>
+<!--div#d1-->
+<!--div.c1-->
+<!--div*3-->
+<div id="d1"></div>
+<div id="d2"></div>
+</body>
+</html>
