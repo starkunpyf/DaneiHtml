@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="d1">div</div>
+<input type="text">
+<input type="button" value="button" onclick="f()">
+<script>
+    function f(){
+        let d = document.getElementById("d1");
+        // console.log(d.innerText);
+        // d.innerText="changed"
+        let i = document.querySelector("input");
+        // i.value="sth"
+        d.innerText = i.value
+    }
+</script>
+</body>
+</html>

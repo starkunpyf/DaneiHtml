@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input type="text" :value="info">
+    <input type="text" v-bind:value="info">
+    <a :href="url">超链接</a>
+    <img :src="imgName" alt="">
+
+</div>
+<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/2.6.14/vue.min.js"></script>
+<script>
+    new Vue({
+        el:"div",
+        data: {
+            info:"属性绑定",
+            url:"https://baidu.com",
+            imgName:"head.jpg"
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<input type="button" value="平方" onclick="f()">
+<div>
+  结果:<span></span>
+</div>
+<script>
+  function f() {
+    let i = document.querySelector("input");
+    let s = document.querySelector("span");
+    //让文本框的值平方后赋值给span
+      //i.value得到的是字符串类型 当字符串进行-*/运算时会自动转成数值 再计算
+      // NaN*NaN  NaN和任何数值进行任何运算 结果都是NaN
+      //isNaN(x) 判断x是否是NaN true代表是NaN
+      if (isNaN(i.value)){
+          s.innerText = "输入错误!";
+          return;
+      }
+    s.innerText = i.value*i.value;
+  }
+</script>
+</body>
+</html>

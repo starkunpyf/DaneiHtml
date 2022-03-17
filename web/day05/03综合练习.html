@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+  <caption>个人信息</caption>
+  <tr>
+    <td>照片:</td>
+    <td><img id="head_img" src="head.jpg"
+             style="width: 100px" alt=""></td>
+  </tr>
+    <tr>
+        <td>名字:</td><td id="name_td">xxx</td>
+    </tr>
+    <tr>
+        <td>年龄:</td><td id="age_td">xxx</td>
+    </tr>
+    <tr>
+        <td>好友:</td>
+        <td>
+            <ul id="friend_ul">
+
+            </ul>
+        </td>
+    </tr>
+</table>
+<input type="button" value="请求数据" onclick="f()">
+<script>
+    function f() {
+        //模拟一份从服务器请求回来的数据
+        let p = {name:"美女",age:50,url:"../b.jpg",
+            friends:["刘备","关羽","张飞"]};
+        //把对象中的数据展示到页面中
+        head_img.src = p.url;
+        name_td.innerText = p.name;
+        age_td.innerText = p.age;
+        for (let name of p.friends) {
+            //创建li
+            let li = document.createElement("li");
+            li.innerText = name;
+            friend_ul.append(li);
+        }
+    }
+</script>
+</body>
+</html>

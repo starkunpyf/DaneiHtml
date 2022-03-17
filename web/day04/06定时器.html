@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>0</h1>
+<h2>0</h2>
+<script>
+  //开启定时器  每隔1秒 调用一次f方法
+  setInterval(f,1000);
+  let count=0;
+  function f() {
+    count++;
+    let h = document.querySelector("h1");
+    h.innerText = count;
+  }
+  let x=0;
+  //匿名方法开启定时器
+  let timer = setInterval(function () {
+      x++;
+      let h = document.querySelector("h2");
+      h.innerText = x;
+      if (x>50){
+          //停止定时器
+          clearInterval(timer);
+      }
+  },100);
+
+  //开启只执行一次的定时器
+  setTimeout(function () {
+      x=50;
+  },3000);
+
+</script>
+</body>
+</html>

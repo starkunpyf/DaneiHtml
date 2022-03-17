@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="i1">
+<input type="text" id="i2">
+<input type="button" value="加" onclick="f(1)">
+<input type="button" value="减" onclick="f(2)">
+<input type="button" value="乘" onclick="f(3)">
+<input type="button" value="除" onclick="f(4)">
+<div>
+  结果:<span></span>
+</div>
+<script>
+    function f(x) {
+        //获取两个文本框  给元素添加id 浏览器会自动生成以下代码
+        // let i1 = document.getElementById("i1");
+        // let i2 = document.getElementById("i2");
+        let span = document.querySelector("span");
+        switch (x) {
+            case 1:
+                span.innerText = i1.value*1+i2.value*1;
+                break;
+            case 2:
+                span.innerText = i1.value-i2.value;
+                break;
+            case 3:
+                span.innerText = i1.value*i2.value;
+                break;
+            case 4:
+                span.innerText = i1.value/i2.value;
+                break;
+        }
+
+    }
+    function f1() {
+        let i1 = document.querySelector("#i1");
+        let i2 = document.querySelector("#i2");
+        let s = document.querySelector("span");
+        //s.innerText = i1.value*1+i2.value*1;
+        //parseFloat 将字符串转成整数或小数
+        s.innerText = parseFloat(i1.value)+parseFloat(i2.value);
+    }
+    function f2() {
+        let i1 = document.querySelector("#i1");
+        let i2 = document.querySelector("#i2");
+        let s = document.querySelector("span");
+        s.innerText = i1.value-i2.value;
+    }
+    function f3() {
+        let i1 = document.querySelector("#i1");
+        let i2 = document.querySelector("#i2");
+        let s = document.querySelector("span");
+        s.innerText = i1.value*i2.value;
+    }
+    function f4() {
+        let i1 = document.querySelector("#i1");
+        let i2 = document.querySelector("#i2");
+        let s = document.querySelector("span");
+        s.innerText = i1.value/i2.value;
+    }
+</script>
+
+</body>
+</html>

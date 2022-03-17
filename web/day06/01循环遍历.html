@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+  <caption>汽车列表</caption>
+  <tr>
+    <th>编号</th><th>品牌名称</th><th>售价</th><th>类型</th>
+  </tr>
+    <tr v-for="(car,i) in arr">
+        <td>{{i+1}}</td>
+        <td>{{car.name}}</td>
+        <td>{{car.price}}</td>
+        <td>{{car.type}}</td>
+    </tr>
+</table>
+<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/2.6.14/vue.min.js"></script>
+<script>
+    let v = new Vue({
+        el:"table",
+        data:{
+            arr:[{name:"比亚迪汉",price:250000,type:"轿车"},
+                {name:"特斯拉m3",price:230000,type:"轿车"},
+                {name:"蔚来ES8",price:550000,type:"SUV"}]
+        }
+    })
+</script>
+</body>
+</html>

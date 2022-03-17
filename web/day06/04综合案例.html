@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <table border="1">
+    <caption>个人信息</caption>
+    <tr>
+      <td>照片:</td>
+      <td><img :src="p.url" style="width: 100px" alt=""></td>
+    </tr>
+    <tr>
+      <td>名字:</td><td>{{p.name}}</td>
+    </tr>
+    <tr>
+      <td>年龄:</td><td>{{p.age}}</td>
+    </tr>
+    <tr>
+      <td>好友们:</td>
+      <td>
+        <ul>
+          <li v-for="name in p.friends">{{name}}</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <input type="button" value="请求数据" @click="f()">
+</div>
+<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/2.6.14/vue.min.js"></script>
+<script>
+  let v = new Vue({
+    el:"div",
+    data:{
+      p:{name:"xxx",age:0,url:"../day05/head.jpg",friends: ["xxx","xxx"]}
+    },
+    methods:{
+      f(){
+        let person = {name:"刘德华",age:50,url:"../b.jpg",
+          friends: ["张学友","周星驰"]};
+        //把模拟从服务器得到的数据赋值给和页面绑定的p变量 页面会自动发生改变
+        v.p=person;
+      }
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+<div id="app">
+<h1>基础用法</h1>
+  <template>
+    <el-table :data="tableData" style="width: 100%">
+      <el-table-column prop="date" label="日期" width="180">
+      </el-table-column>
+      <el-table-column prop="name" label="姓名" width="180">
+      </el-table-column>
+      <el-table-column prop="address" label="地址">
+      </el-table-column>
+    </el-table>
+  </template>
+<h1>员工列表</h1>
+  <template>
+    <el-table :data="arr" style="width: 500px">
+      <el-table-column prop="name" label="姓名" width="180">
+      </el-table-column>
+      <el-table-column prop="sal" label="工资" width="180">
+      </el-table-column>
+      <el-table-column prop="job" label="工作">
+      </el-table-column>
+      <el-table-column label="操作">
+        <template slot-scope="scope">
+          <el-button
+                  size="mini"
+                  type="danger"
+                  @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+  </template>
+</div>
+</body>
+<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/2.6.14/vue.min.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: function() {
+      return {
+        arr:[{name:"张三",sal:50000,job:"程序员"},
+          {name:"李四",sal:800,job:"销售"},
+          {name:"王五",sal:600,job:"人事"}],
+        tableData: [{
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄'
+        }]
+      }
+    }
+  })
+</script>
+</html>

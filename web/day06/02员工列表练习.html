@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <input type="text" placeholder="姓名" v-model="name">
+  <input type="text" placeholder="工资" v-model="sal">
+  <input type="text" placeholder="工作" v-model="job">
+  <input type="button" value="添加" @click="f()">
+  <table border="1">
+    <caption>员工列表</caption>
+    <tr>
+      <th>编号</th><th>姓名</th><th>工资</th><th>工作</th>
+    </tr>
+    <tr v-for="(e,i) in arr">
+      <td>{{i+1}}</td>
+      <td>{{e.name}}</td>
+      <td>{{e.sal}}</td>
+      <td>{{e.job}}</td>
+    </tr>
+  </table>
+</div>
+<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/2.6.14/vue.min.js"></script>
+<script>
+  let v = new Vue({
+    el:"div",
+    data:{
+      arr:[{name:"刘备",sal:5000,job:"销售"},
+        {name:"关羽",sal:3000,job:"人事"},
+        {name:"张飞",sal:1000,job:"出纳"}],
+      name:"",
+      sal:"",
+      job:""
+    },
+    methods:{
+      f(){
+        //数组.push() 往数组中添加元素的方法
+        v.arr.push({name:v.name,sal:v.sal,job:v.job});
+      }
+    }
+  })
+</script>
+</body>
+</html>

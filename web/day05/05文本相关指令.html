@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    {{info}}<b>{{info}}</b>
+    <p v-text="info"></p>
+    <p v-html="info"></p>
+
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:"div",
+        data: {
+            info:"文本测试<b>加粗</b>"
+        }
+    })
+</script>
+</body>
+</html>

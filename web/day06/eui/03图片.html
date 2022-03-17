@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+<div id="app">
+
+  <el-image :src="url" fit="cover"
+            style="width: 100px;height: 200px;background-color: red"></el-image>
+  <div class="demo-image">
+    <div class="block" v-for="fit in fits" :key="fit">
+      <span class="demonstration">{{ fit }}</span>
+      <el-image
+              style="width: 100px; height: 100px;background-color: red"
+              :src="url"
+              :fit="fit"></el-image>
+    </div>
+  </div>
+
+</div>
+</body>
+<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/2.6.14/vue.min.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: function() {
+      return {
+        fits: ['fill', 'contain', 'cover', 'none', 'scale-down'],
+        url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg'
+      }
+    }
+  })
+</script>
+</html>
