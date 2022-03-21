@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>添加员工页面</h1>
+<form action="">
+    <input type="text" name="name" placeholder="姓名">
+    <input type="text" name="sal" placeholder="工资">
+    <input type="text" name="job" placeholder="工作">
+    <input type="button" value="添加" @click="insert()">
+</form>
+
+<script src="js/vue.min.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+    let v = new Vue({
+        el:"form",
+        methods: {
+            insert(){
+                let data = new FormData(document.querySelector("form"));
+                axios.post("/insert",data).then(function(response) {
+                    alert("添加完成");
+                    location.href="/";
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>

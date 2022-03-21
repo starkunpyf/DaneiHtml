@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1">
+    <caption>员工列表</caption>
+    <tr>
+        <th>id</th>
+        <th>名字</th>
+        <th>工资</th>
+        <th>工作</th>
+        <th>操作</th>
+    </tr>
+    <tr v-for="emp in arr">
+        <td>{{emp.id}}</td>
+        <td><a :href="'/update.html?id='+emp.id">{{emp.name}}</a></td>
+        <td>{{emp.sal}}</td>
+        <td>{{emp.job}}</td>
+        <td>
+            <a :href="'/update.html?id='+emp.id">修改</a>
+            <a href="javascript:void(0)" @click="del(emp.id)">删除</a>
+        </td>
+    </tr>
+</table>
+
+<script src="js/vue.min.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+    let v = new Vue({
+        el:"table",
+        data: {
+            arr:[]
+        },
+        created: function() {
+            axios.get("/select").then(function(response) {
+                v.arr = response.data;
+            })
+        },
+        methods:{
+            del(id){
+                if(confirm("确认删除此员工吗")){
+                    axios.get("/delete?id="+id).then(function(response) {
+                        location.reload();
+                    })
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

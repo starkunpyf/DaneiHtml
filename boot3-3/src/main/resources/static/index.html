@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>{{info}}</h2>
+    <input type="button" value="异步请求get" @click="f1()">
+    <input type="button" value="异步请求post" @click="f2()">
+</div>
+<script src="js/vue.js"></script>
+<script src="js/axios.min.js"></script>
+
+<script>
+    let v = new Vue({
+        el:"div",
+        data: {
+            info:"测试Vue"
+        },
+        methods:{
+          f1(){
+              // alert("方法执行了")
+              axios.get("/helloAxios?info=tom").then(function(response){
+                  alert("服务响应内容:"+response.data);
+              })
+          },
+          f2(){
+              let data = new FormData();
+              data.append("info", "jerry");
+              axios.post("/helloAxios",data).then(function(response){
+                  alert("接受到了响应："+response.data);
+              })
+          }
+        }
+    })
+</script>
+</body>
+</html>
